@@ -1,0 +1,44 @@
+<!-- genericos/templates/genericos/region_list.html -->
+{% extends '../../basePanel.html' %}
+{% load static %}
+{% block title %} Administrar Regiones {% endblock title %}
+{% block subtitle %} Gestión de Regiones {% endblock subtitle %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Registros de Regiones Actuales</h4>
+                    </div>
+                    <div class="card-body table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for region in regiones %}
+                                <tr>
+                                    <td>{{ region.nombre }}</td>
+                                    <td>
+                                        <a href="{% url 'region_update' region.id %}" class="btn btn-secondary btn-sm">Editar</a>
+                                        <a href="{% url 'region_delete' region.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-footer clearfix">
+                        <a href="{% url 'region_create' %}" class="btn btn-primary float-right">Adicionar Región</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
