@@ -55,6 +55,8 @@ DJANGO_APPS = [
 LOCAL_APPS = [
     'aplicaciones.GestionSucursales.franquicias',
     'aplicaciones.GestionProductos.productos',
+    'aplicaciones.GestionHomeWeb.homeWeb',
+    'aplicaciones.GestionComplementarios.genericos',
 ]
 
 # APLICACIONES DE TERCEROS
