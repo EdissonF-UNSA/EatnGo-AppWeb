@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{% static 'css/adminlte.min.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/cecomirl.png' %}">
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+
+<body class="hold-transition sidebar-mini layout-navbar-fixed layout-fixed layout-footer-fixed">
+    <div class="wrapper">
+        {% include "includes/header.html" %}
+        {% include "includes/sidebar.html" %}
+
+        <div class="content-wrapper">
+            <section class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                        <div class="col-sm-6">
+                            <h1>{% block subtitle %}{% endblock subtitle %}</h1>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="content">
+                {% block content %}
+
+                {% endblock content %}
+            </section>
+        </div>
+
+        {% include "includes/footer.html" %}
+    </div>
+
+    <!-- REQUIRED SCRIPTS -->
+    <!-- jQuery -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <!-- Bootstrap 4 -->
+    <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'js/adminlte.min.js' %}"></script>
+    <!-- Custom Scripts -->
+    <script src="{% static 'js/estilosTemplate.js' %}"></script>
+</body>
+</html>
