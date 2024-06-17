@@ -1,0 +1,95 @@
+<!--heredamos de la plantilla base-->
+{% extends '../basePanel.html' %}
+{% load static %}
+<!--Bloque para cambiar titulo de plantilla-->
+{% block title %} Administrar Franquicias {% endblock title %}
+{% block subtitle %} Eat'n Go {% endblock subtitle %}
+<!--Bloque de contenidos-->
+{% block content %}
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Registros de Franquicias Actuales</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Código</th>
+                                        <th>Descripción</th>
+                                        <th>Estado Registro</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for franquicia in franquicias %}
+                                    <tr>
+                                        <td>{{ franquicia.codigo }}</td>
+                                        <td>{{ franquicia.descripcion }}</td>
+                                        <td>
+                                            {% if franquicia.estadoRegistro %}
+                                            <span class="badge badge-success">ACTIVO</span>
+                                            {% else %}
+                                            <span class="badge badge-danger">INACTIVO</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="card-footer clearfix">
+                            <ul class="pagination pagination-sm m-0 float-right">
+                                <li class="page-item"><a class="page-link" href="#">«</a></li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">»</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Registro de Franquicia</h4>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="form-group">
+                                    <label for="codigo">Código:</label>
+                                    <input type="text" class="form-control" id="codigo" placeholder="Código">
+                                </div>
+                                <div class="form-group">
+                                    <label for="descripcion">Descripción:</label>
+                                    <input type="text" class="form-control" id="descripcion" placeholder="Descripción">
+                                </div>
+                                <div class="form-group">
+                                    <label for="estadoRegistro">Estado Registro:</label>
+                                    <input type="checkbox" id="estadoRegistro">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Adicionar</button>
+                                    <button type="button" class="btn btn-secondary">Modificar</button>
+                                    <button type="button" class="btn btn-danger">Eliminar</button>
+                                    <button type="button" class="btn btn-default">Cancelar</button>
+                                    <button type="button" class="btn btn-warning">Inactivar</button>
+                                    <button type="button" class="btn btn-success">Reactivar</button>
+                                    <button type="button" class="btn btn-info">Actualizar</button>
+                                    <button type="button" class="btn btn-dark">Salir</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="card-footer">
+                            <!-- Espacio para botones adicionales o información -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

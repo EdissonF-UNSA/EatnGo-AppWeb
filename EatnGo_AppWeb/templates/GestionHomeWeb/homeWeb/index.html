@@ -1,0 +1,214 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Eat'n Go - Comida Rápida</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="Comida rápida, hamburguesas, pizzas, servicio a domicilio" name="keywords">
+  <meta content="Disfruta de la mejor comida rápida en Eat'n Go, cerca de ti." name="description">
+
+  <!-- Favicons -->
+  <link href="{% static 'images/logo1-food.png' %}" rel="icon">
+  <link href="{% static 'images/logo1-food.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:400,600,300,200&subset=latin,latin-ext" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="{% static './lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="{% static './lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+  <link href="{% static './lib/fancybox/fancybox.css' %}" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="{% static 'css/styleindex.css' %} " rel="stylesheet">
+
+  <link rel="prefetch" href="{% static '/images/zoom.png' %}">
+
+</head>
+
+<body data-spy="scroll" data-offset="58" data-target="#navigation">
+
+  <!-- Fixed navbar -->
+  <div id="navigation" class="navbar navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <i class="fa fa-bars"></i>
+        </button>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+
+          <li class="active"><a href="#intro" class="smoothscroll"><p><img src="{% static 'images/logo1-food.png' %}" width="75" height="75"></p> <b>EAT'n GO!</b></a></li>
+          <li><br><br><a href="#about-us" class="smoothscroll"><b>Sobre Nosotros</b></a></li>
+          <li><br><br><a href="#menu" class="smoothscroll"><b>Menú</b></a></li>
+          <li><br><br><a href="#delivery" class="smoothscroll"><b>Servicio a Domicilio</b></a></li>
+          <li><br><br><a href="#contact" class="smoothscroll"><b>Contacto</b></a></li>
+          <li><br><br><a href="login"><p align="right"><b>Ingresar</b></p></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- === MAIN Background === -->
+  <div class="slide story" id="intro" data-slide="1">
+    <div class="container">
+      <div id="home-row-1" class="row clearfix">
+        <div class="col-12">
+          <h1 class="font-semibold">Eat'n Go...</h1>
+          <h3 class="font-thin">cerca <span class="font-semibold">de ti</span></h3>
+          <br>
+        </div>
+      </div>
+      <div id="home-row-2" class="row clearfix">
+        <div class="col-10 col-sm-4">
+          <h1>¡Bienvenido!</h1>
+          <p>Disfruta de la mejor comida rápida, desde hamburguesas hasta pizzas, todo preparado con ingredientes frescos y de calidad.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Slide 2 === -->
+  <div class="slide story" id="about-us" data-slide="2">
+    <div class="container">
+      <div class="row title-row">
+        <div class="col-12 font-thin">Sobre <span class="font-semibold">Nosotros</span></div>
+      </div>
+      <div class="row line-row">
+        <div class="hr">&nbsp;</div>
+      </div>
+      <div class="row subtitle-row">
+        <div class="col-12 font-thin">Esto es lo que <span class="font-semibold">hacemos mejor</span></div>
+      </div>
+      <div class="row content-row">
+        <div class="col-12 col-lg-3 col-sm-6">
+          <p><i class="fa fa-cutlery"></i></p>
+          <h2 class="font-thin">Comida <span class="font-semibold">Rápida</span></h2>
+          <h4 class="font-thin">Ofrecemos una variedad de platillos rápidos y deliciosos.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <p><i class="fa fa-truck"></i></p>
+          <h2 class="font-thin">Entrega <span class="font-semibold">Rápida</span></h2>
+          <h4 class="font-thin">Tu comida en la puerta de tu casa en minutos.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <p><i class="fa fa-leaf"></i></p>
+          <h2 class="font-thin">Ingredientes <span class="font-semibold">Frescos</span></h2>
+          <h4 class="font-thin">Solo utilizamos ingredientes de la más alta calidad.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <p><i class="fa fa-star"></i></p>
+          <h2 class="font-semibold">Servicio <span class="font-semibold">Excepcional</span></h2>
+          <h4 class="font-thin">Nuestro equipo está listo para brindarte la mejor experiencia.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Slide 3 - Menu === -->
+  <div class="slide story" id="menu" data-slide="3">
+    <div class="container">
+      <div class="row title-row">
+        <div class="col-12 font-thin">Nuestro <span class="font-semibold">Menú</span></div>
+      </div>
+      <div class="row line-row">
+        <div class="hr">&nbsp;</div>
+      </div>
+      <div class="row subtitle-row">
+        <div class="col-12 font-thin">Descubre nuestros <span class="font-semibold">platillos</span></div>
+      </div>
+      <div class="row content-row">
+        <div class="col-12 col-lg-3 col-sm-6">
+          <img src="{% static 'images/menu/burger.jpg' %}" alt="Hamburguesas" class="thumb">
+          <h2 class="font-thin">Hamburguesas</h2>
+          <h4 class="font-thin">Jugosas y deliciosas, hechas a la parrilla.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <img src="{% static 'images/menu/pizza.jpg' %}" alt="Pizzas" class="thumb">
+          <h2 class="font-thin">Pizzas</h2>
+          <h4 class="font-thin">Con una variedad de ingredientes frescos.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <img src="{% static 'images/menu/fries.jpg' %}" alt="Papas Fritas" class="thumb">
+          <h2 class="font-thin">Papas Fritas</h2>
+          <h4 class="font-thin">Crujientes y doradas a la perfección.</h4>
+        </div>
+        <div class="col-12 col-lg-3 col-sm-6">
+          <img src="{% static 'images/menu/drinks.jpg' %}" alt="Bebidas" class="thumb">
+          <h2 class="font-thin">Bebidas</h2>
+          <h4 class="font-thin">Una selección refrescante para acompañar tu comida.</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Slide 4 - Delivery === -->
+  <div class="slide story" id="delivery" data-slide="4">
+    <div class="container">
+      <div class="row title-row">
+        <div class="col-12 font-thin">Servicio de <span class="font-semibold">Entrega</span></div>
+      </div>
+      <div class="row line-row">
+        <div class="hr">&nbsp;</div>
+      </div>
+      <div class="row subtitle-row">
+        <div class="col-sm-1 hidden-sm">&nbsp;</div>
+        <div class="col-12 col-lg-10 font-thin">Tu comida favorita en <span class="font-semibold">tu puerta</span></div>
+        <div class="col-sm-1 hidden-sm">&nbsp;</div>
+      </div>
+      <div class="row content-row">
+        <div class="col-12">
+          <h3 class="font-thin">Nuestro servicio de entrega es rápido, eficiente y siempre puntual.</h3>
+          <h3 class="font-thin">Ordena ahora y disfruta de tu comida sin salir de casa.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- === Slide 5 - Contact === -->
+  <div class="slide story" id="contact" data-slide="5">
+    <div class="container">
+      <div class="row title-row">
+        <div class="col-12 font-thin">Contáctanos</div>
+      </div>
+      <div class="row line-row">
+        <div class="hr">&nbsp;</div>
+      </div>
+      <div class="row content-row">
+        <div class="col-12 col-lg-6 col-lg-offset-3">
+          <h2 class="font-thin">¿Tienes alguna pregunta? <span class="font-semibold">¡Estamos aquí para ayudarte!</span></h2>
+          <form action="mailto:info@eatngo.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Tu Nombre">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" placeholder="Tu Email">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" placeholder="Tu Mensaje"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Javascript Libraries -->
+  <script src="{% static './lib/jquery/jquery.min.js' %}"></script>
+  <script src="{% static './lib/bootstrap/js/bootstrap.min.js' %}"></script>
+  <script src="{% static './lib/jquery-smoothscroll/jquery.smooth-scroll.min.js' %}"></script>
+  <script src="{% static './lib/fancybox/fancybox.js' %}"></script>
+  <script src="{% static './lib/jquery/jquery.localScroll.min.js' %}"></script>
+  <script src="{% static './lib/jquery/jquery.scrollTo.min.js' %}"></script>
+
+  <!-- Main Javascript File -->
+  <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>
