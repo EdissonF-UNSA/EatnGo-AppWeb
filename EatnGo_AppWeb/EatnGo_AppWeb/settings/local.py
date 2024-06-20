@@ -10,10 +10,19 @@ ALLOWED_HOSTS = ['*']
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR.child('db.sqlite3'),
+#         'NAME': BASE_DIR.child('db.sqlite4'),
 #     }
 # }
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': get_secret('DB_LOCAL_NAME'),
+        'USER': get_secret('USER_DB'),
+        'PASSWORD': get_secret('PASSWORD_DB'),
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
