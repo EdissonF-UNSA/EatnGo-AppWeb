@@ -1,13 +1,5 @@
-# genericos/forms.py
-
 from django import forms
 from .models import Region, Provincia, Distrito, Direccion
-
-# genericos/forms.py
-
-from django import forms
-from .models import Region
-
 
 class RegionForm(forms.ModelForm):
     class Meta:
@@ -32,7 +24,6 @@ class RegionForm(forms.ModelForm):
             raise forms.ValidationError("El ID ya está siendo utilizado por otra región.")
 
         return id
-
 
 class ProvinciaForm(forms.ModelForm):
     class Meta:

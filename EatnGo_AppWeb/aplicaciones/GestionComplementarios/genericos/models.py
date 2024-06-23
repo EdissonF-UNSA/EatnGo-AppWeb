@@ -2,7 +2,7 @@ from django.db import models
 
 class Region(models.Model):
     id = models.CharField(max_length=10, primary_key=True, unique=True)
-    nombre = models.CharField(unique=False, max_length=30)
+    nombre = models.CharField(unique=False, max_length=40)
     estado = models.BooleanField(default=True)
 
     def __str__(self):
@@ -10,7 +10,7 @@ class Region(models.Model):
 
 class Provincia(models.Model):
     id = models.CharField(max_length=10, primary_key=True, unique=True)
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=40)
     region = models.ForeignKey(Region, on_delete=models.CASCADE)
     estado = models.BooleanField(default=True)
 
@@ -19,7 +19,7 @@ class Provincia(models.Model):
 
 class Distrito(models.Model):
     id = models.CharField(max_length=10, primary_key=True, unique=True)
-    nombre = models.CharField(max_length=100)
+    nombre = models.CharField(max_length=40)
     provincia = models.ForeignKey(Provincia, on_delete=models.CASCADE)
     estado = models.BooleanField(default=True)
 
