@@ -8,5 +8,9 @@ urlpatterns = [
     path('regiones/nueva/', views.RegionCreateView.as_view(), name='region_create'),
     path('regiones/<str:pk>/editar/', views.RegionUpdateView.as_view(), name='region_update'),
     path('regiones/<str:pk>/eliminar/', views.RegionDeleteView.as_view(), name='region_delete'),
-    # Otros paths para Provincia, Distrito, y Direccion
+    # Provincias
+    path('provincias/', views.ProvinciaListView.as_view(), name='provincia_list'),
+    path('provincias/nueva/', views.ProvinciaCreateView.as_view(), name='provincia_create'),
+    path('provincias/<str:pk>/editar/', views.ProvinciaUpdateView.as_view(), name='provincia_update'),
+    path('provincias/<str:pk>/eliminar/', views.ProvinciaDeleteView.as_view(), name='provincia_delete'),
 ]

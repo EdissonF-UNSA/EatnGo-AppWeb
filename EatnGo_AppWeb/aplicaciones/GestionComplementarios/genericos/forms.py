@@ -28,7 +28,7 @@ class RegionForm(forms.ModelForm):
 class ProvinciaForm(forms.ModelForm):
     class Meta:
         model = Provincia
-        fields = ['nombre', 'region']
+        fields = ['id', 'nombre', 'region', 'estado']
 
 class DistritoForm(forms.ModelForm):
     class Meta:
