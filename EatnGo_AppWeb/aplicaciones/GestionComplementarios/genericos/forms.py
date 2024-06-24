@@ -1,5 +1,5 @@
 from django import forms
-from .models import Region, Provincia, Distrito, Direccion
+from .models import Region, Provincia, Distrito, Direccion, EstadoCivil
 
 class RegionForm(forms.ModelForm):
     class Meta:
@@ -39,3 +39,8 @@ class DireccionForm(forms.ModelForm):
     class Meta:
         model = Direccion
         fields = ['provincia', 'distrito', 'informacion_adicional']
+
+class EstadoCivilForm(forms.ModelForm):
+    class Meta:
+        model = EstadoCivil
+        fields = ['id', 'nombre', 'estado']

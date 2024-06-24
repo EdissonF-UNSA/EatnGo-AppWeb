@@ -1,8 +1,8 @@
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.core.paginator import Paginator
-from .models import Region, Provincia, Distrito, Direccion
-from .forms import RegionForm, ProvinciaForm, DistritoForm, DireccionForm
+from .models import Region, Provincia, Distrito, Direccion, EstadoCivil
+from .forms import RegionForm, ProvinciaForm, DistritoForm, DireccionForm,EstadoCivilForm
 
 # Region Views
 class RegionListView(ListView):
@@ -99,7 +99,7 @@ class DistritoListView(ListView):
 # Vista para editar campos de modelo Provincia
 
 class DistritoCreateView(CreateView):
-    model = Provincia
+    model = Distrito
     form_class = DistritoForm
     template_name = 'GestionComplementarios/genericos/distrito_form.html'
     success_url = reverse_lazy('genericos:distrito_list')  # Uso del espacio de nombres
@@ -115,3 +115,42 @@ class DistritoDeleteView(DeleteView):
     model = Distrito
     template_name = 'GestionComplementarios/genericos/distrito_confirm_delete.html'
     success_url = reverse_lazy('genericos:distrito_list')  # Uso del espacio de nombres
+
+
+# Vista para EstadoCivil
+class EstadoCivilListView(ListView):
+    model = EstadoCivil
+    template_name = 'GestionComplementarios/genericos/estadocivil_list.html'
+    context_object_name = 'estadocivil'
+    paginate_by = 5  # Número de elementos por página
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        estadosciviles_list = EstadoCivil.objects.all()
+        paginator = Paginator(estadosciviles_list, self.paginate_by)
+
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context['page_obj'] = page_obj
+        return context
+
+# Vista para editar campos de modelo Estado Civil
+
+class EstadoCivilCreateView(CreateView):
+    model = EstadoCivil
+    form_class = EstadoCivilForm
+    template_name = 'GestionComplementarios/genericos/estadocivil_form.html'
+    success_url = reverse_lazy('genericos:estadocivil_list')  # Uso del espacio de nombres
+
+class EstadoCivilUpdateView(UpdateView):
+    model = EstadoCivil
+    form_class = EstadoCivilForm
+    template_name = 'GestionComplementarios/genericos/estadocivil_form.html'
+    success_url = reverse_lazy('genericos:estadocivil_list')  # Uso del espacio de nombres
+    lookup_field = 'codigo'  # Utilizar el campo 'codigo' como identificador
+
+class EstadoCivilDeleteView(DeleteView):
+    model = EstadoCivil
+    template_name = 'GestionComplementarios/genericos/estadocivil_confirm_delete.html'
+    success_url = reverse_lazy('genericos:estadocivil_list')  # Uso del espacio de nombres
