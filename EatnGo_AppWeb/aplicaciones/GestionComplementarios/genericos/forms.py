@@ -33,7 +33,7 @@ class ProvinciaForm(forms.ModelForm):
 class DistritoForm(forms.ModelForm):
     class Meta:
         model = Distrito
-        fields = ['nombre', 'provincia']
+        fields = ['id', 'nombre', 'provincia', 'estado']
 
 class DireccionForm(forms.ModelForm):
     class Meta:

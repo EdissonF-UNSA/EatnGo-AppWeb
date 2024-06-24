@@ -1,0 +1,30 @@
+<!-- genericos/templates/genericos/region_form.html -->
+{% extends '../../basePanel.html' %}
+{% load static %}
+{% block title %} Administrar Distritos {% endblock title %}
+{% block subtitle %} Gestión de Distritos {% endblock subtitle %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>{{ view.object.pk|yesno:"Editar,Adicionar" }} Distrito</h4>
+                    </div>
+                    <div class="card-body">
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                                <a href="{% url 'genericos:distrito_list' %}" class="btn btn-secondary">Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}

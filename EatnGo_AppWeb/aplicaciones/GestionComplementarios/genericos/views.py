@@ -77,3 +77,41 @@ class ProvinciaDeleteView(DeleteView):
     model = Provincia
     template_name = 'GestionComplementarios/genericos/provincia_confirm_delete.html'
     success_url = reverse_lazy('genericos:provincia_list')  # Uso del espacio de nombres
+
+# Vista para DISTRITO
+class DistritoListView(ListView):
+    model = Distrito
+    template_name = 'GestionComplementarios/genericos/distrito_list.html'
+    context_object_name = 'distrito'
+    paginate_by = 5  # Número de elementos por página
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        distritos_list = Distrito.objects.all()
+        paginator = Paginator(distritos_list, self.paginate_by)
+
+        page_number = self.request.GET.get('page')
+        page_obj = paginator.get_page(page_number)
+
+        context['page_obj'] = page_obj
+        return context
+
+# Vista para editar campos de modelo Provincia
+
+class DistritoCreateView(CreateView):
+    model = Provincia
+    form_class = DistritoForm
+    template_name = 'GestionComplementarios/genericos/distrito_form.html'
+    success_url = reverse_lazy('genericos:distrito_list')  # Uso del espacio de nombres
+
+class DistritoUpdateView(UpdateView):
+    model = Distrito
+    form_class = DistritoForm
+    template_name = 'GestionComplementarios/genericos/distrito_form.html'
+    success_url = reverse_lazy('genericos:distrito_list')  # Uso del espacio de nombres
+    lookup_field = 'codigo'  # Utilizar el campo 'codigo' como identificador
+
+class DistritoDeleteView(DeleteView):
+    model = Distrito
+    template_name = 'GestionComplementarios/genericos/distrito_confirm_delete.html'
+    success_url = reverse_lazy('genericos:distrito_list')  # Uso del espacio de nombres

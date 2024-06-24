@@ -13,4 +13,9 @@ urlpatterns = [
     path('provincias/nueva/', views.ProvinciaCreateView.as_view(), name='provincia_create'),
     path('provincias/<str:pk>/editar/', views.ProvinciaUpdateView.as_view(), name='provincia_update'),
     path('provincias/<str:pk>/eliminar/', views.ProvinciaDeleteView.as_view(), name='provincia_delete'),
+    # Distritos
+    path('distritos/', views.DistritoListView.as_view(), name='distrito_list'),
+    path('distritos/nueva/', views.DistritoCreateView.as_view(), name='distrito_create'),
+    path('distritos/<str:pk>/editar/', views.DistritoUpdateView.as_view(), name='distrito_update'),
+    path('distritos/<str:pk>/eliminar/', views.DistritoDeleteView.as_view(), name='distrito_delete'),
 ]

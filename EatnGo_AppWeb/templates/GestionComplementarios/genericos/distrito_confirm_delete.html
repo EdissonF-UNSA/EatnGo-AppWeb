@@ -1,0 +1,28 @@
+<!-- genericos/templates/genericos/region_confirm_delete.html -->
+{% extends '../../basePanel.html' %}
+{% load static %}
+{% block title %} Confirmar Eliminación {% endblock title %}
+{% block subtitle %} Gestión de Distritos {% endblock subtitle %}
+{% block content %}
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Confirmar Eliminación</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>¿Está seguro de que desea eliminar el distrito "{{ object.nombre }}"?</p>
+                        <form method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                            <a href="{% url 'genericos:distrito_list' %}" class="btn btn-secondary">Cancelar</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
